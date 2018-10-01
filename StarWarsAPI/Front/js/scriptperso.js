@@ -75,3 +75,26 @@ function persoprecedent() {
   idpersonnage = idpersonnage - 1;
   chercherPersonnage(idpersonnage);
 }
+
+
+function SauvegarderPersonnage() {
+    alert("Vous devez auparavant charger les détails des personnages");
+    //if (liste == null) {
+    //    alert("Liste vide, vous devez auparavant charger les détails des personnages");
+    //}
+    var listeperso = [];
+    for (var element of liste) {
+        var perso = [];
+        perso.push(element.name, element.birth_year, element.film);
+        listeperso.push(perso);
+    }
+    console.log(listeperso);
+    //let perso = {
+    //    Name : $('#Nom').val(),
+    //    Prenom: $('#Prenom').val(),
+    //    DateNaissance: $('#DateNaissance').val(),
+    //    Email: $('#Email').val(),
+    //    Telephone: $('#NumTel').val(),
+    //    Adresse: $('#Adresse').val()
+    //};
+}

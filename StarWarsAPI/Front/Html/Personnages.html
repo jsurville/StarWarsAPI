@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -24,27 +24,29 @@
 </head>
 
 <body id="idbody" class="body">
-  <h1 id="h1"> Les Personnages de Star Wars</h1>
+    <h1 id="h1"> Les Personnages de Star Wars</h1>
 
-  <ul class="ulmenu">
-    <li class="menu"><a id="accueil" href="index.html">Home</a></li>
-    <li class="menu"><a id="planete" href="Planetes.html">Planètes</a></li>
-    <li class="menu"><a class="active" id="perso" href="Personnages.html">Personnages</a></li>
-    <li class="menu"><a href="#">About</a></li>
-  </ul>
+    <ul class="ulmenu">
+        <li class="menu"><a id="accueil" href="index.html">Home</a></li>
+        <li class="menu"><a id="planete" href="Planetes.html">Planètes</a></li>
+        <li class="menu"><a class="active" id="perso" href="Personnages.html">Personnages</a></li>
+        <li class="menu"><a href="#">About</a></li>
+    </ul>
 
-  <ul id="ulbody" class="ulbody">
-    Bienvenue sur mon blog consacré au monde de Star Wars. Ici vous trouverez toutes les informations concernant les planètes, personnages, et les films ...
-    <br>
-    <button class="btn" id="idbut1" onclick="listerPersonnage()"> Liste des Personnages </button> <button class="btn" id="idbut2" onclick="chercherPersonnage(1)"> Détails les Personnages </button>
-    <br>
-    <a href="#" class="previous" onclick="persoprecedent()"> &laquo; Previous </a>
-    <a href="#" class="next" onclick="persosuivant()"> Next &raquo;</a>
-  </ul>
+    <ul id="ulbody" class="ulbody">
+        Bienvenue sur mon blog consacré au monde de Star Wars. Ici vous trouverez toutes les informations concernant les planètes, personnages, et les films ...
 
-  <div id="idarea" class="row">
-  </div>
- 
+        <button class="btn" id="idbut1" onclick="listerPersonnage()"> Liste des Personnages </button>
+        <button class="btn" id="idbut2" onclick="chercherPersonnage(1)"> Détails les Personnages </button>
+        <button class="btn" id="idbut3" onclick="SauvegarderPersonnage()"> Sauvegarder tous les Personnages </button>
+        <li><a href="#" class="previous" onclick="persoprecedent()"> &laquo; Previous </a></li>
+        <li><a href="#" class="next" onclick="persosuivant()"> Next &raquo;</a></li>
+    </ul>
+
+    <div id="idarea" class="row">
+    </div>
+   
+    <script src = "/Front/js/scriptperso.js" ></script>
 </body>
-<script src="scriptperso.js"></script>
+
 </html>
