@@ -11,5 +11,6 @@ namespace StarWarsAPI.Models
         public string Name { get; set; }
         public DateTime? BirdthDate { get; set; }
         public int Mass { get; set; }
+        public ICollection<Episode> Episodes { get; set; }
     }
 }

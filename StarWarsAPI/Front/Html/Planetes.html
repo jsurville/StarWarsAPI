@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,7 +11,7 @@
           crossorigin="anonymous" />
     <link data-require="bootstrap@*" data-semver="4.1.1" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+    <script src="../js/scriptplanete.js"></script>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -31,40 +31,41 @@
 </head>
 
 <body id="idbody" class="body">
-  <h1 id="h1"> Les Planètes de Star Wars</h1>
+    <h1 id="h1"> Les Planètes de Star Wars</h1>
 
-  <ul class="ulmenu">
-    <li class="menu"><a id="accueil" href="index.html">Home</a></li>
-    <li class="menu"><a class="active" id="planete" href="Planetes.html">Planètes</a></li>
-    <li class="menu"><a id="perso" href="Personnages.html">Personnages</a></li>
-    <li class="menu"><a href="#">About</a></li>
-  </ul>
+    <ul class="ulmenu">
+        <li class="menu"><a id="accueil" href="index.html">Home</a></li>
+        <li class="menu"><a class="active" id="planete" href="Planetes.html">Planètes</a></li>
+        <li class="menu"><a id="perso" href="Personnages.html">Personnages</a></li>
+        <li class="menu"><a href="#">About</a></li>
+    </ul>
 
-  <ul id="ulbody" class="ulbody">
-    Bienvenue sur mon blog consacré au monde de Star Wars. Ici vous trouverez toutes les informations concernant les planètes, personnages, et les films ...
-    <br>
-    <button class="btn alert-primary" id="idbut1" onclick="listerPlanete()"> Liste des PLanètes </button>
-    <button class="btn" id="idbut1" onclick="chercherPlanete(1)"> Détails des PLanètes </button>
-    <br>
-  </ul>
+    <ul id="ulbody" class="ulbody">
+        Bienvenue sur mon blog consacré au monde de Star Wars. Ici vous trouverez toutes les informations concernant les planètes, personnages, et les films ...
 
-  <nav>
-    <a href="#" class="previous" onclick="planeteprecedent()"> &laquo; Previous </a>
-    <a href="#" class="next" onclick="planetesuivant()"> Next &raquo;</a>
-    <a id="a1" href="#" onclick="chercherPlanete(1)" > 1 </a>
-    <a id="a2" href="#" onclick="chercherPlanete(2)"> 2 </a>
-    <a id="a3" href="#" onclick="chercherPlanete(3)"> 3 </a>
-    <a id="a4" href="#" onclick="chercherPlanete(4)"> 4 </a>
-    <a id="a5" href="#" onclick="chercherPlanete(5)"> 5 </a>
-    <a id="a6" href="#" onclick="chercherPlanete(6)"> 6 </a>
-    <a id="a7" href="#" onclick="chercherPlanete(7)"> 7 </a>
-    <br />
-  </nav>
+        <li><button class="btn alert-primary" id="idbut1" onclick="listerPlanete()"> Liste des PLanètes </button></li>
+        <li><button class="btn" id="idbut1" onclick="chercherPlanete(1)"> Détails des PLanètes </button></li>
+
+    </ul>
+
+    <nav>
+        <a href="#" class="previous" onclick="planeteprecedent()"> &laquo; Previous </a>
+        <a href="#" class="next" onclick="planetesuivant()"> Next &raquo;</a>
+        <a id="a1" href="#" onclick="chercherPlanete(1)"> 1 </a>
+        <a id="a2" href="#" onclick="chercherPlanete(2)"> 2 </a>
+        <a id="a3" href="#" onclick="chercherPlanete(3)"> 3 </a>
+        <a id="a4" href="#" onclick="chercherPlanete(4)"> 4 </a>
+        <a id="a5" href="#" onclick="chercherPlanete(5)"> 5 </a>
+        <a id="a6" href="#" onclick="chercherPlanete(6)"> 6 </a>
+        <a id="a7" href="#" onclick="chercherPlanete(7)"> 7 </a>
+        <br />
+    </nav>
 
 
-  <div id="idarea" class="row">
-  </div>
+    <div id="idarea" class="row">
+    </div>
+    <script src="/Front/js/scriptplanete.js"></script>
 </body>
-<script src="scriptplanete.js"></script>
+
 
 </html>

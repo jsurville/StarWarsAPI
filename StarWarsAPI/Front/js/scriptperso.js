@@ -85,10 +85,33 @@ function SauvegarderPersonnage() {
     var listeperso = [];
     for (var element of liste) {
         var perso = [];
-        perso.push(element.name, element.birth_year, element.film);
+        perso.push(element.name, element.birth_year, element.mass, element.films)
         listeperso.push(perso);
-    }
-    console.log(listeperso);
+    };
+    //console.log(listeperso);
+    listeperso.forEach(function (item) {
+        var listeadresse = item[3];
+        //console.log(listeadresse);
+
+        listeadresse.forEach(function (adresse) {
+            jQuery.ajax({
+                method: "GET",
+                url: adresse
+            })
+                .done(function (film) {
+                    var apapritions = film.title;
+                    perso[3] = apapritions;
+                });
+            
+            console.log(perso);
+        });
+
+    })
+}
+    
+
+   
+  
     //let perso = {
     //    Name : $('#Nom').val(),
     //    Prenom: $('#Prenom').val(),
@@ -97,4 +120,3 @@ function SauvegarderPersonnage() {
     //    Telephone: $('#NumTel').val(),
     //    Adresse: $('#Adresse').val()
     //};
-}
