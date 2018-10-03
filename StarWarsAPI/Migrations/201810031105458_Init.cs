@@ -3,7 +3,7 @@ namespace StarWarsAPI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AjoutEpisodes : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
@@ -16,10 +16,12 @@ namespace StarWarsAPI.Migrations
                     })
                 .PrimaryKey(t => t.ID);
             
+            AddColumn("dbo.Persoes", "Episode", c => c.String());
         }
         
         public override void Down()
         {
+            DropColumn("dbo.Persoes", "Episode");
             DropTable("dbo.Episodes");
         }
     }

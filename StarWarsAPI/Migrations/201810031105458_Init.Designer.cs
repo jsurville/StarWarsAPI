@@ -7,13 +7,13 @@ namespace StarWarsAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AjoutEpisodesPerso : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AjoutEpisodesPerso));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201810031034155_AjoutEpisodesPerso"; }
+            get { return "201810031105458_Init"; }
         }
         
         string IMigrationMetadata.Source
