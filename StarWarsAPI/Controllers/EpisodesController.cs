@@ -13,44 +13,44 @@ using StarWarsAPI.Models;
 
 namespace StarWarsAPI.Controllers
 {
-    public class PersoesController : ApiController
+    public class EpisodesController : ApiController
     {
         private StarWarsAPIContext db = new StarWarsAPIContext();
 
-        // GET: api/Persoes
-        public IQueryable<Perso> GetPersos()
+        // GET: api/Episodes
+        public IQueryable<Episode> GetEpisodes()
         {
-            return db.Persos.Include("Episodes");
+            return db.Episodes;
         }
 
-        // GET: api/Persoes/5
-        [ResponseType(typeof(Perso))]
-        public IHttpActionResult GetPerso(int id)
+        // GET: api/Episodes/5
+        [ResponseType(typeof(Episode))]
+        public IHttpActionResult GetEpisode(int id)
         {
-            Perso perso = db.Persos.Find(id);
-            if (perso == null)
+            Episode episode = db.Episodes.Find(id);
+            if (episode == null)
             {
                 return NotFound();
             }
 
-            return Ok(perso);
+            return Ok(episode);
         }
 
-        // PUT: api/Persoes/5
+        // PUT: api/Episodes/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPerso(int id, Perso perso)
+        public IHttpActionResult PutEpisode(int id, Episode episode)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != perso.ID)
+            if (id != episode.ID)
             {
                 return BadRequest();
             }
 
-            db.Entry(perso).State = EntityState.Modified;
+            db.Entry(episode).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace StarWarsAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PersoExists(id))
+                if (!EpisodeExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace StarWarsAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Persoes
-        [ResponseType(typeof(Perso))]
-        public IHttpActionResult PostPerso(Perso perso)
+        // POST: api/Episodes
+        [ResponseType(typeof(Episode))]
+        public IHttpActionResult PostEpisode(Episode episode)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Persos.Add(perso);
+            db.Episodes.Add(episode);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = perso.ID }, perso);
+            return CreatedAtRoute("DefaultApi", new { id = episode.ID }, episode);
         }
 
-        // DELETE: api/Persoes/5
-        [ResponseType(typeof(Perso))]
-        public IHttpActionResult DeletePerso(int id)
+        // DELETE: api/Episodes/5
+        [ResponseType(typeof(Episode))]
+        public IHttpActionResult DeleteEpisode(int id)
         {
-            Perso perso = db.Persos.Find(id);
-            if (perso == null)
+            Episode episode = db.Episodes.Find(id);
+            if (episode == null)
             {
                 return NotFound();
             }
 
-            db.Persos.Remove(perso);
+            db.Episodes.Remove(episode);
             db.SaveChanges();
 
-            return Ok(perso);
+            return Ok(episode);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace StarWarsAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool PersoExists(int id)
+        private bool EpisodeExists(int id)
         {
-            return db.Persos.Count(e => e.ID == id) > 0;
+            return db.Episodes.Count(e => e.ID == id) > 0;
         }
     }
 }

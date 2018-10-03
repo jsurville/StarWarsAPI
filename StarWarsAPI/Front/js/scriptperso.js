@@ -31,7 +31,7 @@ function chercherPersonnage(idpersonnage) {
         div1.append(films);
 
           jQuery('#idarea').append(div1);
-          console.log($('#idarea').text());
+        //  console.log($('#idarea').text());
       });
     });
 }
@@ -80,15 +80,9 @@ function persoprecedent() {
 
 function SauvegarderPersonnage() {
     alert("Vous devez auparavant charger les détails des personnages");
-    //if (liste == null) {
-    //    alert("Liste vide, vous devez auparavant charger les détails des personnages");
-    //}
-   // liste = data["results"];
+   
     liste.forEach(function (item) {
         var div1 = jQuery('<div id="perso" class="col-sm-6 col-md-4 perso" >');
-        
-
-       
         var listefilms = item.films;
         var listetitres = [];
         listefilms.forEach(function (element) {
@@ -104,12 +98,30 @@ function SauvegarderPersonnage() {
         div1.attr("data-name", item.name);
         div1.attr("data-date", item.birth_year);
         div1.attr("data-mass", item.mass);
-        //div1.attr("data-films", listefilms);
-        
-
-        
         console.log($(div1));
+
+        let personnage = {
+            Name: div1.attr('data-name'),
+            BirdthDate: div1.attr('data-date'),
+            Mass: div1.attr('data-mass'),
+            Episodes: div1.attr('data-films')
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/Persoes/',
+            data: personnage,
+            success: function () {
+                alert("La modification a bien été effectuée");
+                
+                // RemplirDivCategorie(divCategorie, { ID: idCategorie, Nom: nomCategorie });
+            },
+            error: alert("La modification a bien été effectuée")
+        });
+
     });
+    
+
 }
     
 

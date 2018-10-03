@@ -98,11 +98,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EpisodesController.cs" />
     <Compile Include="Controllers\PersoesController.cs" />
     <Compile Include="Data\StarWarsAPIContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810031015122_Init.cs" />
+    <Compile Include="Migrations\201810031015122_Init.Designer.cs">
+      <DependentUpon>201810031015122_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810031025272_ModifPersos.cs" />
+    <Compile Include="Migrations\201810031025272_ModifPersos.Designer.cs">
+      <DependentUpon>201810031025272_ModifPersos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810031029235_AjoutEpisodes.cs" />
+    <Compile Include="Migrations\201810031029235_AjoutEpisodes.Designer.cs">
+      <DependentUpon>201810031029235_AjoutEpisodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810031034155_AjoutEpisodesPerso.cs" />
+    <Compile Include="Migrations\201810031034155_AjoutEpisodesPerso.Designer.cs">
+      <DependentUpon>201810031034155_AjoutEpisodesPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Perso.cs" />
     <Compile Include="Models\Planete.cs" />
@@ -119,6 +137,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810031015122_Init.resx">
+      <DependentUpon>201810031015122_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810031025272_ModifPersos.resx">
+      <DependentUpon>201810031025272_ModifPersos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810031029235_AjoutEpisodes.resx">
+      <DependentUpon>201810031029235_AjoutEpisodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810031034155_AjoutEpisodesPerso.resx">
+      <DependentUpon>201810031034155_AjoutEpisodesPerso.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -9,7 +9,7 @@ namespace StarWarsAPI.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public DateTime? BirdthDate { get; set; }
+        public string BirdthDate { get; set; }
         public int Mass { get; set; }
         public ICollection<Episode> Episodes { get; set; }
     }

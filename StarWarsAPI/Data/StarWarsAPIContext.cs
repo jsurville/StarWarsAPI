@@ -11,6 +11,6 @@ namespace StarWarsAPI.Data
     {
         public DbSet<Perso> Persos { get; set; }
         //public DbSet<Planete> Planetes { get; set; }
-        //public DbSet<Episode> Episodes { get; set; }
+        public DbSet<Episode> Episodes { get; set; }
     }
 }
