@@ -8,7 +8,7 @@ function chercherPersonnage(idpersonnage) {
     .done(function(data) {
       liste = data["results"];
       liste.forEach(function(item) {
-        var div1 = jQuery('<div class="col-sm-6 col-md-4 perso" >');
+        var div1 = jQuery('<div id="perso" class="col-sm-6 col-md-4 perso" >');
         var titre = jQuery('<h2 id="h2pers">' + item.name + '</h2>');
         var date = jQuery('<ul> Année de Naissance : ' + item.birth_year + '</ul>');
         var poids = jQuery('<ul> Poids : ' + item.mass + ' kgs </ul>');
@@ -30,7 +30,8 @@ function chercherPersonnage(idpersonnage) {
         div1.append(poids);
         div1.append(films);
 
-        jQuery('#idarea').append(div1);
+          jQuery('#idarea').append(div1);
+          console.log($('#idarea').text());
       });
     });
 }
@@ -52,7 +53,7 @@ function nomPersonnage(pageperso) {
         var titre = jQuery('<li>' + item + '</li>');
         page.append(titre);
         div1.append(page);
-        jQuery('#idarea').append(div1);
+          jQuery('#perso').append(div1);
       });
     }
   });
@@ -82,31 +83,33 @@ function SauvegarderPersonnage() {
     //if (liste == null) {
     //    alert("Liste vide, vous devez auparavant charger les détails des personnages");
     //}
-    var listeperso = [];
-    for (var element of liste) {
-        var perso = [];
-        perso.push(element.name, element.birth_year, element.mass, element.films)
-        listeperso.push(perso);
-    };
-    //console.log(listeperso);
-    listeperso.forEach(function (item) {
-        var listeadresse = item[3];
-        //console.log(listeadresse);
+   // liste = data["results"];
+    liste.forEach(function (item) {
+        var div1 = jQuery('<div id="perso" class="col-sm-6 col-md-4 perso" >');
+        
 
-        listeadresse.forEach(function (adresse) {
+       
+        var listefilms = item.films;
+        var listetitres = [];
+        listefilms.forEach(function (element) {
             jQuery.ajax({
                 method: "GET",
-                url: adresse
+                url: element
             })
                 .done(function (film) {
-                    var apapritions = film.title;
-                    perso[3] = apapritions;
+                    listetitres.push(film.title);
+                    div1.attr("data-films", listetitres);
                 });
-            
-            console.log(perso);
         });
+        div1.attr("data-name", item.name);
+        div1.attr("data-date", item.birth_year);
+        div1.attr("data-mass", item.mass);
+        //div1.attr("data-films", listefilms);
+        
 
-    })
+        
+        console.log($(div1));
+    });
 }
     
 
