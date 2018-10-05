@@ -48,6 +48,14 @@ height:100%;
   color: RGB(200, 250, 240);
 }
 
+
+.listeperso {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    color: RGB(200, 250, 240);
+}
+
 .films {
   display: block;
 }
@@ -80,7 +88,6 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
   color: RGB(200, 250, 240);
-  
 }
 
 /* Change the link color to #111 (black) on hover */

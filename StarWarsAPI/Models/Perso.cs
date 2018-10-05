@@ -14,6 +14,7 @@ namespace StarWarsAPI.Models
         public int Mass { get; set; }
 
         public string Episode { get; set; }
+        public string Film { get; set; }
         
     }
 }

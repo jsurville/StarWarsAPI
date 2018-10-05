@@ -53,7 +53,7 @@ function nomPersonnage(pageperso) {
         var titre = jQuery('<li>' + item + '</li>');
         page.append(titre);
         div1.append(page);
-          jQuery('#perso').append(div1);
+          jQuery('#idarea').append(div1);
       });
     }
   });
@@ -88,23 +88,21 @@ function SauvegarderPersonnage() {
         div1.attr("data-mass", item.mass);
         div1.attr("data-films", item.films);
         
-        let personnage = {
-            Name: div1.attr('data-name'),
-            BirdthDate: div1.attr('data-date'),
-            Mass: div1.attr('data-mass'),
-            Episode: div1.attr('data-films')
-        };
+        //let personnage = {
+        //    Name: div1.attr('data-name'),
+        //    BirdthDate: div1.attr('data-date'),
+        //    Mass: div1.attr('data-mass'),
+        //    Episode: div1.attr('data-films')
+        //};
 
-        $.ajax({
-            type: 'POST',
-            url: '/api/Persoes/',
-            data: personnage,
-            success: function () {
-                //alert("La modification a bien été effectuée");
+        //$.ajax({
+        //    type: 'POST',
+        //    url: '/api/Persoes/',
+        //    data: personnage,
+        //    success: function () {
                 
-                // RemplirDivCategorie(divCategorie, { ID: idCategorie, Nom: nomCategorie });
-            }
-        });
+        //    }
+        //});
 
     });
     

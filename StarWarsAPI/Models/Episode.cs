@@ -10,7 +10,7 @@ namespace StarWarsAPI.Models
     {
         public int ID { get; set; }
         public string Title { get; set; }
-
+        public string Adresse { get; set; }
         
     }
 }
